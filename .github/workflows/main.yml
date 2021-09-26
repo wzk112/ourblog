@@ -4,7 +4,7 @@ name: 自动部署
 on:
   push:
     branches:
-      - master #2020年10月后github新建仓库默认分支改为main，注意更改
+      - main #2020年10月后github新建仓库默认分支改为main，注意更改
 
   release:
     types:
@@ -53,4 +53,5 @@ jobs:
         # 此处务必用HTTPS链接。SSH链接可能有权限报错的隐患
         # =====注意.deploy_git前面有个空格=====
         # 这行指令的目的是clone博客静态文件仓库，防止Hexo推送时覆盖整个静态文件仓库，而是只推送有更改的文件
-        hexo deploy
+        cd public
+        git add . && git commit -m "add to our blog" && git branch -M main && git remote add origin git@github.com:wmz1024/turbo-bassoon.git && git push -u origin main
