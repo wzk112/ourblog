@@ -50,6 +50,6 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        REPOSITORY_NAME: wmz1024/ourblog-deployed
+        REPOSITORY_NAME: wmz1024-action/ourblog
         BRANCH: pages
         FOLDER: public
